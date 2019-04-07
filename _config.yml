@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Litten的博客
-subtitle: 胆小认生，不易相处
-description: 华中科技大学09级，就职于腾讯SNG。擅长各项前端技能，深入研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。
-author: Litten
-email: litten225@qq.com
-keywords: "前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验"
+title: bayuefen的博客
+subtitle: 当留一半清醒，一半醉
+description: 这个人比较懒，还没有想好怎么向你有趣的介绍自己。
+author: bayuefen
+email: wbushifunv555@163.com
+keywords: "bayuefen blog 个人博客"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: //litten.me
+url: /
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -32,7 +32,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 highlight:
   enable: true
@@ -90,17 +90,17 @@ exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-#deploy:
-#  type: git
-#  repository: git@github.com:litten/litten.github.com.git
-#  branch: master
-
 deploy:
-  type: rsync
-  host: 120.24.181.238
-  user: root
-  root: /usr/local/nginx/litten.me/
-  port: 22
+  type: git
+  repository: git@github_jyh.com:bayuefen/bayuefen.github.io.git
+  branch: master
+
+#deploy:
+#  type:
+#  host:
+#  user:
+#  root:
+#  port:
 
 sitemap:
     path: sitemap.xml
