@@ -90,10 +90,14 @@ exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
+#
+# https://github.com/bayuefen/bayuefen.github.io.git
 deploy:
   type: git
-  repository: git@github_jyh.com:bayuefen/bayuefen.github.io.git
+  repository: git@github.com:bayuefen/bayuefen.github.io.git
   branch: master
+  name: bayuefen
+  email: wbushifunv555@163.com
 
 #deploy:
 #  type:
