@@ -5,6 +5,9 @@ tags:
     - 日记
     - 学习Vlog
 ---
+一些学习笔记。
+<!-- more -->
+
 ### HTTP协议
 HTTP协议是客户端和 服务器端之间数据传输的格式规范，格式简称为“超文本传输协议”全称为“Hyper Text Transfer Protocol”。
 ### HTTP/2协议
@@ -229,9 +232,8 @@ Content-Encoding: gzip
 504|（网关超时）  服务器作为网关或代理，但是没有及时从上游服务器收到请求。 
 505|（HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。
   
-<!-- more -->
 
-
+-------------------------------------------------------------------------------------------------
 <p><image src="https://bayuefen.oss-cn-hangzhou.aliyuncs.com/test/44c8b6f9835b1f07ac9bf0e8cb399b16.jpg.source.jpg?x-oss-process=style/compress_high
 " width="400" align="center"></p>
 
