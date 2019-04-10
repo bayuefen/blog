@@ -10,6 +10,7 @@ tags:
 
 ### HTTP协议
 HTTP协议是客户端和 服务器端之间数据传输的格式规范，格式简称为“超文本传输协议”全称为“Hyper Text Transfer Protocol”。
+
 ### HTTP/2协议
 1、二进制分帧层 (Binary Framing Layer)
 2、在单个TCP连接里多路复用请求。
@@ -232,8 +233,13 @@ Content-Encoding: gzip
 504|（网关超时）  服务器作为网关或代理，但是没有及时从上游服务器收到请求。 
 505|（HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。
   
+  
+### cookies和会话
+因为HTTP是无状态的，对事物处理没有记忆能力。cookies和会话出现用于保持HTTP连接状态，
+会话在服务端，用来保存用户的会话信息；cookies在客户端，浏览器下次访问网页时会自动附带上它发送给服务器，
+服务器通过识别cookies找到对应的会话判断用户状态。
+PS:关闭浏览器不会导致会话被删除，反而没有存储到硬盘上的cookie会消失，因此为了节省存储空间需要为会话设置一个失效时间。
 
--------------------------------------------------------------------------------------------------
 <p><image src="https://bayuefen.oss-cn-hangzhou.aliyuncs.com/test/44c8b6f9835b1f07ac9bf0e8cb399b16.jpg.source.jpg?x-oss-process=style/compress_high
 " width="400" align="center"></p>
 
