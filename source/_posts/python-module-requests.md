@@ -1,5 +1,5 @@
 ---
-title: 【python】三方模块requests入门智能
+title: 【python】三方模块requests入门应用
 date: 2019-04-17 13:47:08
 tags:
     - python
