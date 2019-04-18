@@ -2,15 +2,45 @@
 title: HTTP协议学习
 date: 2019-04-09 22:08:32
 tags:
+    - HTTP
     - 日记
     - 学习Vlog
 ---
-一些学习笔记。
-<!-- more -->
 
 ### HTTP协议
 HTTP协议是客户端和 服务器端之间数据传输的格式规范，格式简称为“超文本传输协议”全称为“Hyper Text Transfer Protocol”。
 
+<!-- more -->
+### HTTP协议历史版本
+- `HTTP 1.0`： 默认是基于短连接，即非持久连接，采用文本数据格式传输；单个tcp连接仅能维护传输单个Web对象。
+    > 无host域
+
+<br/>
+
+- `HTTP 1.1`： 默认是基于长连接，即持久连接（可配置成非持久连接），采用文本数据格式传输；单个tcp连接可以维护多个Web对象的传输。
+    > HTTP 1.1可获取host域这个参数。
+    > 长连接可有效减少TCP三次握手四次挥手的网络连接性能开销。
+    > HTTP 1.1支持只发送header信息，不带任何body信息。可以校验B/S架构模式下，Browser是否具有访问请求权限，有则返回`status: 100`，无则返回`status: 401`，从而再依返回结果将请求的body信息发送给服务器，节约网络带宽。
+    > HTTP 1.1同时也支持资源加载的断点续传。
+    > 同一时间对于同一域名，请求数量有限制，超过限制会造成网络阻塞请求。
+    
+<br/>
+
+- `HTTP 2.0`： 采用二进制数据格式传输；实现多路复用；进行头部压缩优化。[HTTP1.1与HTTP2.0区别Demo](https://http2.akamai.com/demo)
+    > ⭐️ HTTP 2.0采用*多路复用（Multiplexing）* 用以解决*线头阻塞* 的问题。核心基于Google公司开发的基于TCP的应用层协议[SPDY非标准协议](https://zh.wikipedia.org/wiki/SPDY)
+    > ⭐️ 增加"二进制分帧层"实现底层tcp多路复用。将多个请求在同一个TCP连接上完成，承载任意数量的双向数据流。极大的提升了传输层通信性能。
+    > HTTP 2.0采用首部压缩设计的[HPACK](http://http2.github.io/http2-spec/compression.html)算法
+    > HTTP 2.0的Server Push以及缓存策略
+    
+<br/>
+
+- `HTTP 3.0`:  核心基于UDP传输层协议的[QUIC协议](https://zhuanlan.zhihu.com/p/32553477);提供数据传输的高可靠性及0-RTT延迟；彻底解决*线头阻塞* 
+    > 基于UDP传输层协议，实现高速及高可靠性的数据传输。
+    > 彻底解决http1.1遗留的线头阻塞（HOL），实现不同流的数据传输相互独立传输，互不干扰。
+    > 0-RTT，不必像TCP那样需要三次握手。
+    > 参考：
+    [QUIC协议浅析与HTTP/3.0](https://www.jianshu.com/p/bb3eeb36b479) 
+    [如何看待 HTTP/3 ？](https://www.zhihu.com/question/302412059/answer/533223530)
 ### HTTP/2协议
 1、二进制分帧层 (Binary Framing Layer)
 2、在单个TCP连接里多路复用请求。
@@ -24,7 +54,7 @@ HTTP协议是客户端和 服务器端之间数据传输的格式规范，格式
 
 ### HTTP协议在OSI模型的位置
 HTTP协议位于应用层
-![OSI &TCP协议模型对比 ](https://img-blog.csdnimg.cn/20190406164742398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JheXVlZmVuODg2,size_16,color_FFFFFF,t_70)
+<p><image src="https://bayuefen.oss-cn-hangzhou.aliyuncs.com/blog/20190406164742398.png?x-oss-process=style/compress_high" width="600" align="center"></p>
 
 ### HTTP协议的method
 GET：请求一个指定资源的表示形式. 使用GET的请求应该只被用于获取数据.
@@ -239,8 +269,3 @@ Content-Encoding: gzip
 会话在服务端，用来保存用户的会话信息；cookies在客户端，浏览器下次访问网页时会自动附带上它发送给服务器，
 服务器通过识别cookies找到对应的会话判断用户状态。
 PS:关闭浏览器不会导致会话被删除，反而没有存储到硬盘上的cookie会消失，因此为了节省存储空间需要为会话设置一个失效时间。
-
-<p><image src="https://bayuefen.oss-cn-hangzhou.aliyuncs.com/test/44c8b6f9835b1f07ac9bf0e8cb399b16.jpg.source.jpg?x-oss-process=style/compress_high
-" width="400" align="center"></p>
-
-假如说我写完了哦。。。
