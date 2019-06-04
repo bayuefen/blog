@@ -44,8 +44,8 @@ git config --list
 ````
 用户信息配置
 ````
-git config --global user.name "zerlous"
-git config --global user.email lzheng.zj@gmail.com
+git config --global user.name "bayuefen"
+git config --global user.email wobushifunv555@163.com
 ````
 
 #### 四、命令使用
