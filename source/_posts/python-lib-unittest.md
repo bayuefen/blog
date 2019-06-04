@@ -1,8 +1,8 @@
 ---
-title: 【python】标准库unittest基本应用
+title: 【Python】标准库unittest基本应用
 date: 2019-04-17 17:36:29
 tags:
-    - python
+    - Python
     - unittest
     - 日记
 ---
